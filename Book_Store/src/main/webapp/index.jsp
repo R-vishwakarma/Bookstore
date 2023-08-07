@@ -1,4 +1,6 @@
 
+<%@page import="java.sql.Connection"%>
+<%@page import="com.DB.DB_Connect"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -24,8 +26,12 @@
 <body>
 	<%@include file="all-Component/navbar.jsp"%>
 	<div class="container-fluid back-img">
-		<h2 class="text-center text-light"><i class="fa-solid fa-book-open"></i> Welcome To Book Store</h2>
+		<h2 class="text-center text-light">
+			<i class="fa-solid fa-book-open"></i> Welcome To Book Store
+		</h2>
 	</div>
+
+
 
 	<!-- Starting of recent book -->
 	<div class="container-fluid" style="background-color: #e8eded;">
@@ -39,11 +45,16 @@
 							style="width: 200px; height: 250px";>
 						<h6>DSA using Java</h6>
 						<div class="row">
-							<a href="" class="btn btn-secondary btn-sm ml-5"><i
-								class="fa-solid fa-cart-shopping"></i>Add Cart</a> <a href=""
-								class="btn btn-info btn-sm ml-5">View</a> <a href=""
-								class="btn btn-success btn-sm ml-5">₹500</a>
-						</div>
+								
+									
+										<a href="" class="btn btn-secondary btn-sm ml-5"><i
+											class="fa-solid fa-cart-shopping"></i>Add Cart</a> <a href=""
+											class="btn btn-info btn-sm ml-5">View</a> <a href=""
+											class="btn btn-success btn-sm ml-5">₹500</a>
+									</div>
+								
+							
+						
 					</div>
 
 				</div>
@@ -283,7 +294,7 @@
 	</div>
 	<!-- Ending of Old book -->
 
-<%@include file="all-Component/footer.jsp"%>
+	<%@include file="all-Component/footer.jsp"%>
 
 </body>
 </html>
