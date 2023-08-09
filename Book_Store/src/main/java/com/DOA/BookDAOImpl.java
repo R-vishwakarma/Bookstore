@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+
 import com.entity.BookDtls;
 
 public class BookDAOImpl implements BookDAO {
@@ -48,26 +50,23 @@ public class BookDAOImpl implements BookDAO {
 		BookDtls b = null;
 
 		try {
-		
+
 			String sql = "select * from book_dtls";
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ResultSet rs=ps.executeQuery();
-            while(rs.next()) {
-            	
-            	b=new BookDtls();
-            	b.setBookId(rs.getInt(1));
-            	b.setBookName(rs.getString(2));
-            	b.setPrice(rs.getString(3));
-            	b.setBookCategory(rs.getString(4));
-            	b.setStatus(rs.getString(5));
-            	b.setPhotoName(rs.getString(6));
-            	b.setEmail(rs.getString(7));
-            	list.add(b);
-            }
-			
-			
-			
-		
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+
+				b = new BookDtls();
+				b.setBookId(rs.getInt(1));
+				b.setBookName(rs.getString(2));
+				b.setPrice(rs.getString(3));
+				b.setBookCategory(rs.getString(4));
+				b.setStatus(rs.getString(5));
+				b.setPhotoName(rs.getString(6));
+				b.setEmail(rs.getString(7));
+				list.add(b);
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -75,4 +74,85 @@ public class BookDAOImpl implements BookDAO {
 
 	}
 
+	@Override
+	public BookDtls getBookId(int id) {
+		BookDtls b = null;
+		try {
+
+			String sql = "select * from book_dtls where bookId=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				b = new BookDtls();
+				b.setBookId(rs.getInt(1));
+				b.setBookName(rs.getString(2));
+				b.setPrice(rs.getString(3));
+				b.setBookCategory(rs.getString(4));
+				b.setStatus(rs.getString(5));
+				b.setPhotoName(rs.getString(6));
+				b.setEmail(rs.getString(7));
+
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return b;
+	}
+
+	@Override
+	public boolean updateEditBooks(BookDtls b) {
+
+		boolean f = false;
+
+		try {
+			String sql = "update book_dtls set bookname=?,price=?,status=? where bookId=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, b.getBookName());
+			ps.setString(2, b.getPrice());
+			ps.setString(3, b.getStatus());
+			ps.setInt(4, b.getBookId());
+			int i = ps.executeUpdate();
+
+			if (i == 1) {
+				f = true;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return f;
+	}
+
+	@Override
+	public boolean deleteBooks(int id) {
+	boolean f=false;
+		
+	try {
+		
+		String sql="delete from book_dtls where bookId=?";
+		PreparedStatement ps=conn.prepareStatement(sql);
+		ps.setInt(1, id);
+	    int i=ps.executeUpdate();
+		
+		if(i==1) {
+			f=true;
+		}
+		
+		
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+		
+		return f;
+	}
+
+	
+	
+	
 }
