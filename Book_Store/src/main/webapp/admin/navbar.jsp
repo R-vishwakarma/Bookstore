@@ -8,7 +8,6 @@
 				<i class="fa-solid fa-book"></i> Book Store
 			</h3>
 		</div>
-		
 
 		<div class="col-md-2">
 			<c:if test="${not empty userobj }">

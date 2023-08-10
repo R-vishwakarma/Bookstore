@@ -37,7 +37,7 @@ public class BooksAdd extends HttpServlet {
 
 			boolean f = dao.addBooks(b);
 			HttpSession session = req.getSession();
-			if (f) {
+			if (f){
               
 				String path =getServletContext().getRealPath("")+"books";
 				   

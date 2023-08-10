@@ -60,12 +60,12 @@
 
 							</div>
 							<div class="form-group">
-								<label for="inputState">Book Catagories</label> <select
+								<label for="inputState">Book Categories</label> <select
 									id="inputState" name="categories" class="form-control">
 									<option selected>--select--</option>
-									<option value="New">Recent Book</option>
+									<option value="Recent">Recent Book</option>
 									<option value="New">New Book</option>
-									<option value="New">Old Book</option>
+									<option value="Old">Old Book</option>
 								</select>
 							</div>
 
@@ -73,8 +73,8 @@
 								<label for="inputState">Book Status</label> <select
 									id="inputState" name="status" class="form-control">
 									<option selected>--select--</option>
-									<option value="New">Active</option>
-									<option value="New">Inactive</option>
+									<option value="Active">Active</option>
+									<option value="Inactive">Inactive</option>
 								</select>
 							</div>
 

@@ -86,6 +86,7 @@ public class BookDAOImpl implements BookDAO {
 
 			while (rs.next()) {
 				b = new BookDtls();
+
 				b.setBookId(rs.getInt(1));
 				b.setBookName(rs.getString(2));
 				b.setPrice(rs.getString(3));
@@ -130,29 +131,57 @@ public class BookDAOImpl implements BookDAO {
 
 	@Override
 	public boolean deleteBooks(int id) {
-	boolean f=false;
-		
-	try {
-		
-		String sql="delete from book_dtls where bookId=?";
-		PreparedStatement ps=conn.prepareStatement(sql);
-		ps.setInt(1, id);
-	    int i=ps.executeUpdate();
-		
-		if(i==1) {
-			f=true;
+		boolean f = false;
+
+		try {
+
+			String sql = "delete from book_dtls where bookId=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			int i = ps.executeUpdate();
+
+			if (i == 1) {
+				f = true;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		
-		
-		
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
-		
+
 		return f;
 	}
 
-	
-	
-	
+	@Override
+	public List<BookDtls> getNewBook() {
+		List<BookDtls> list = new ArrayList<BookDtls>();
+		BookDtls b = null;
+		try {
+			String sql = "select * from book_dtls  where bookCategory=? and status=? order by bookId DESC";
+
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, "New");
+			ps.setString(2, "Active");
+			ResultSet rs = ps.executeQuery();
+			int i = 1;
+			while (rs.next() && i <= 4) {
+				b = new BookDtls();
+
+				b.setBookId(rs.getInt(1));
+				b.setBookName(rs.getString(2));
+				b.setPrice(rs.getString(3));
+				b.setBookCategory(rs.getString(4));
+				b.setStatus(rs.getString(5));
+				b.setPhotoName(rs.getString(6));
+				b.setEmail(rs.getString(7));
+				list.add(b);
+				i++;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+
 }

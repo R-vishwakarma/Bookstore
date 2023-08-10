@@ -1,4 +1,7 @@
 
+<%@page import="com.entity.BookDtls"%>
+<%@page import="java.util.List"%>
+<%@page import="com.DOA.BookDAOImpl"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="com.DB.DB_Connect"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -45,16 +48,16 @@
 							style="width: 200px; height: 250px";>
 						<h6>DSA using Java</h6>
 						<div class="row">
-								
-									
-										<a href="" class="btn btn-secondary btn-sm ml-5"><i
-											class="fa-solid fa-cart-shopping"></i>Add Cart</a> <a href=""
-											class="btn btn-info btn-sm ml-5">View</a> <a href=""
-											class="btn btn-success btn-sm ml-5">₹500</a>
-									</div>
-								
-							
-						
+
+							<a href="" class="btn btn-secondary btn-sm ml-5"><i
+								class="fa-solid fa-cart-shopping"></i>Add Cart</a> <a href=""
+								class="btn btn-info btn-sm ml-5">View</a> <a href=""
+								class="btn btn-success btn-sm ml-5">₹500</a>
+						</div>
+
+
+
+
 					</div>
 
 				</div>
@@ -124,81 +127,41 @@
 
 
 	<!-- Starting of New book -->
-	<div class="container-fluid" style="background-color: #e8eded;">
+	<div class="container" style="background-color: #e8eded;">
 		<h3 class="text-center">New book</h3>
 		<div class="row">
-
-			<div class="col-md-3">
-				<div class="card crd-ho">
+              
+               <%
+               BookDAOImpl dao = new BookDAOImpl(DB_Connect.getConn());
+               List<BookDtls> list = dao.getNewBook();
+               for(BookDtls b:list)
+               {%>
+                <div class="col-md-3">
+            	 <div class="card crd-ho">
 					<div class="card-body text-center">
-						<img alt="" src="books/ad_java.jpg"
-							style="width: 200px; height: 250px";>
-						<h6>Advance Java Programming</h6>
+						<img alt="" src="books/<%=b.getPhotoName()%>"
+							style="width: 150px; height: 200px;" class="img-thumblin">
+						<h6><%=b.getBookName() %></h6>
+						<h6>Categories : <%=b.getBookCategory() %></h6>
 						<div class="row">
-							<a href="" class="btn btn-secondary btn-sm ml-5"><i
+							<a href="" class="btn btn-secondary btn-sm ml-3"><i
 								class="fa-solid fa-cart-shopping"></i>Add Cart</a> <a href=""
-								class="btn btn-info btn-sm ml-5">View</a> <a href=""
-								class="btn btn-success btn-sm ml-5">₹500</a>
+								class="btn btn-info btn-sm ml-1">View</a> <a href=""
+								class="btn btn-success btn-sm ml-1"><i class="fa-solid fa-rupee-sign"></i>.<%=b.getPrice() %></a>
 						</div>
 					</div>
 
 				</div>
-
-			</div>
-
-			<div class="col-md-3">
-				<div class="card crd-ho">
-					<div class="card-body text-center">
-						<img alt="" src="books/ad_c++.jpg"
-							style="width: 200px; height: 250px";>
-						<h6>Advance C++ Programming</h6>
-						<div class="row">
-							<a href="" class="btn btn-secondary btn-sm ml-5"><i
-								class="fa-solid fa-cart-shopping"></i>Add Cart</a> <a href=""
-								class="btn btn-info btn-sm ml-5">View</a> <a href=""
-								class="btn btn-success btn-sm ml-5">₹550</a>
-						</div>
 					</div>
+            	   
+               <%}
+               %>
+               
+				
 
-				</div>
+		
+               
 
-			</div>
-
-			<div class="col-md-3">
-				<div class="card crd-ho">
-					<div class="card-body text-center">
-						<img alt="" src="books/ad_c.jpg"
-							style="width: 200px; height: 250px";>
-						<h6>Advance C Programming</h6>
-						<div class="row">
-							<a href="" class="btn btn-secondary btn-sm ml-5"><i
-								class="fa-solid fa-cart-shopping"></i>Add Cart</a> <a href=""
-								class="btn btn-info btn-sm ml-5">View</a> <a href=""
-								class="btn btn-success btn-sm ml-5">₹600</a>
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-
-			<div class="col-md-3">
-				<div class="card crd-ho">
-					<div class="card-body text-center">
-						<img alt="" src="books/ad_py.jpg"
-							style="width: 200px; height: 250px";>
-						<h6>Advance Python Programming</h6>
-						<div class="row">
-							<a href="" class="btn btn-secondary btn-sm ml-5"><i
-								class="fa-solid fa-cart-shopping"></i>Add Cart</a> <a href=""
-								class="btn btn-info btn-sm ml-5">View</a> <a href=""
-								class="btn btn-success btn-sm ml-5">₹200</a>
-						</div>
-					</div>
-
-				</div>
-
-			</div>
 
 		</div>
 		<div class="text-center ml-1 p-5">
