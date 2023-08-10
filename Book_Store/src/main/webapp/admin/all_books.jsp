@@ -16,6 +16,13 @@
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
+	
+	<c:if test="${empty userobj }">
+		<c:redirect url="../login.jsp">
+		
+		</c:redirect>
+	</c:if>
+	
 	<h4 class="text-center pt-2">
 		<b><i class="fa-solid fa-user"></i> Hello Admin</b>
 	</h4>
@@ -26,10 +33,9 @@
 	</c:if>
 
 	<c:if test="${not empty failedMsg }">
-		<h4 class="text-center text-danger">${failedMsg}
-			</h4>
-	<c:remove var="failedMsg" scope="session" />
-		</c:if>
+		<h4 class="text-center text-danger">${failedMsg}</h4>
+		<c:remove var="failedMsg" scope="session" />
+	</c:if>
 
 
 
@@ -64,8 +70,11 @@
 				<td><%=b.getStatus()%></td>
 
 				<td><a href="edit_books.jsp?id=<%=b.getBookId()%>"
-					class="btn btn-sm btn-success">Edit</a> <a
-					href="../../delete?id=<%=b.getBookId()%>" class="btn btn-sm btn-danger">Delete</a></td>
+					class="btn btn-sm btn-success"><i
+						class="fa-regular fa-pen-to-square"></i> Edit</a> <a
+					href="../../delete?id=<%=b.getBookId()%>"
+					class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i>
+						Delete</a></td>
 			</tr>
 
 			<%

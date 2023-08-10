@@ -9,6 +9,12 @@
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
+	<c:if test="${empty userobj }">
+		<c:redirect url="../login.jsp">
+
+		</c:redirect>
+	</c:if>
+
 	<h4 class="text-center pt-2">
 		<b><i class="fa-solid fa-user"></i> Hello Admin</b>
 	</h4>
@@ -36,7 +42,7 @@
 				<td>Mark</td>
 				<td>Otto</td>
 				<td>@mdo</td>
-				
+
 
 
 			</tr>
@@ -49,7 +55,7 @@
 				<td>Mark</td>
 				<td>Otto</td>
 				<td>@mdo</td>
-				
+
 			</tr>
 			<tr>
 				<th scope="row">3</th>
@@ -60,12 +66,12 @@
 				<td>Mark</td>
 				<td>Otto</td>
 				<td>@mdo</td>
-				
+
 
 			</tr>
 		</tbody>
 	</table>
-<%@include file="footer.jsp"%>
+	<%@include file="footer.jsp"%>
 
 </body>
 </html>
