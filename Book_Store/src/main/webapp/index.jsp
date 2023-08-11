@@ -22,7 +22,7 @@
 }
 
 .crd-ho:hover {
-	background-color: #fcf7f7;
+	background-color: #ddeff0;
 }
 </style>
 </head>
@@ -52,7 +52,7 @@
 				<div class="card crd-ho">
 					<div class="card-body text-center">
 						<img alt="" src="books/<%=b.getPhotoName()%>"
-							style="width: 150px; height: 200px;" class="img-thumblin">
+							style="width: 130px; height: 175px;" class="img-thumblin">
 						<h6><%=b.getBookName()%></h6>
 						<h6>
 							Categories :
@@ -71,7 +71,7 @@
 			%>
 		</div>
 		<div class="text-center ml-1 p-5">
-			<a href="" class="btn btn-primary btn-sm text-white">View All</a>
+			<a href="all_recent_book.jsp" class="btn btn-primary btn-sm text-white">View All</a>
 		</div>
 	</div>
 
@@ -93,7 +93,7 @@
 				<div class="card crd-ho">
 					<div class="card-body text-center">
 						<img alt="" src="books/<%=b.getPhotoName()%>"
-							style="width: 150px; height: 200px;" class="img-thumblin">
+							style="width: 130px; height: 175px;" class="img-thumblin">
 						<h6><%=b.getBookName()%></h6>
 						<h6>
 							Categories :
@@ -113,7 +113,7 @@
 			%>
 		</div>
 		<div class="text-center ml-1 p-5">
-			<a href="" class="btn btn-primary btn-sm text-white">View All</a>
+			<a href="all_new_book.jsp" class="btn btn-primary btn-sm text-white">View All</a>
 		</div>
 	</div>
 	<!-- Ending of New book -->
@@ -135,7 +135,7 @@
 				<div class="card crd-ho">
 					<div class="card-body text-center">
 						<img alt="" src="books/<%=b.getPhotoName()%>"
-							style="width: 150px; height: 200px;" class="img-thumblin">
+							style="width: 130px; height: 175px;" class="img-thumblin">
 						<h6><%=b.getBookName()%></h6>
 						<h6>
 							Categories :
@@ -156,7 +156,7 @@
 			%>
 		</div>
 		<div class="text-center ml-1 p-5">
-			<a href="" class="btn btn-primary btn-sm text-white">View All</a>
+			<a href="all_old_book.jsp" class="btn btn-primary btn-sm text-white">View All</a>
 		</div>
 	</div>
 

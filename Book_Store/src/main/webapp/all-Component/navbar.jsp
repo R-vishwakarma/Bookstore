@@ -32,15 +32,17 @@
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active"><a class="nav-link" href="#"> <i
+			<li class="nav-item active"><a class="nav-link" href="index.jsp"> <i
 					class="fa-solid fa-house-chimney"></i> Home <span class="sr-only">(current)</span>
 			</a></li>
-			<li class="nav-item active"><a class="nav-link" href="#"><i
+			
+			<li class="nav-item active"><a class="nav-link disabled"
+				href="all_recent_book.jsp"><i class="fa-solid fa-book"></i> Recent Book</a></li>
+			<li class="nav-item active"><a class="nav-link" href="all_new_book.jsp"><i
 					class="fa-solid fa-book"></i> New Book</a></li>
+			
 			<li class="nav-item active"><a class="nav-link disabled"
-				href="#"><i class="fa-solid fa-book"></i> Recent Book</a></li>
-			<li class="nav-item active"><a class="nav-link disabled"
-				href="#"><i class="fa-solid fa-book"></i> Old Book</a></li>
+				href="all_old_book.jsp"><i class="fa-solid fa-book"></i> Old Book</a></li>
 		</ul>
 		<form class="form-inline my-2 mlmy-lg-0">
 
