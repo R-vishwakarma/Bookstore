@@ -14,7 +14,7 @@
 
 		</div>
 
-		<div class="col-md-2">
+		<div class="row-md-2">
 			<a href="login.jsp" class="btn btn-success"><i
 				class="fa-solid fa-user-plus"></i>Login</a> <a href="register.jsp"
 				class="btn btn-secondary"><i class="fa-regular fa-id-card"></i> Register</a>
