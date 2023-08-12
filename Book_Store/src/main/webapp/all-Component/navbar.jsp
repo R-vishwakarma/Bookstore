@@ -18,7 +18,7 @@
 		</div>
 
 		<c:if test="${not empty userobj}">
-			<a href="cart.jsp"><i
+			<a href="checkout.jsp"><i
 				class="fa-solid fa-cart-shopping fa-2x pt-1 pr-2 text-primary"></i>
 			</a>
 			<div class="row-md-2">
