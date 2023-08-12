@@ -1,6 +1,9 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false"%>
+
 <div class="container-fluid p-3">
 	<div class="row">
-		<div class="col-md-4">
+		<div class="col-md-3">
 			<h3>
 				<i class="fa-solid fa-book"></i> Book Store
 			</h3>
@@ -14,11 +17,30 @@
 
 		</div>
 
-		<div class="row-md-2">
-			<a href="login.jsp" class="btn btn-success"><i
-				class="fa-solid fa-user-plus"></i>Login</a> <a href="register.jsp"
-				class="btn btn-secondary"><i class="fa-regular fa-id-card"></i> Register</a>
-		</div>
+		<c:if test="${not empty userobj}">
+			<a href="cart.jsp"><i
+				class="fa-solid fa-cart-shopping fa-2x pt-1 pr-2 text-primary"></i>
+			</a>
+			<div class="row-md-2">
+
+				<a href="login.jsp" class="btn btn-success"><i
+					class="fa-solid fa-user"></i> ${userobj.name }</a> <a href="logout"
+					class="btn btn-secondary"><i
+					class="fa-solid fa-right-from-bracket"></i> Louout</a>
+			</div>
+
+		</c:if>
+		<c:if test="${ empty userobj}">
+
+			<div class="row-md-2">
+				<a href="login.jsp" class="btn btn-success"><i
+					class="fa-solid fa-user-plus"></i>Login</a> <a href="register.jsp"
+					class="btn btn-secondary"><i class="fa-regular fa-id-card"></i>
+					Register</a>
+			</div>
+
+
+		</c:if>
 	</div>
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-custom lm-0.5">
@@ -32,23 +54,30 @@
 
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active"><a class="nav-link" href="index.jsp"> <i
-					class="fa-solid fa-house-chimney"></i> Home <span class="sr-only">(current)</span>
+			<li class="nav-item active"><a class="nav-link" href="index.jsp">
+					<i class="fa-solid fa-house-chimney"></i> Home <span
+					class="sr-only">(current)</span>
 			</a></li>
-			
+
 			<li class="nav-item active"><a class="nav-link disabled"
-				href="all_recent_book.jsp"><i class="fa-solid fa-book"></i> Recent Book</a></li>
-			<li class="nav-item active"><a class="nav-link" href="all_new_book.jsp"><i
-					class="fa-solid fa-book"></i> New Book</a></li>
-			
+				href="all_recent_book.jsp"><i class="fa-solid fa-book"></i>
+					Recent Book</a></li>
+			<li class="nav-item active"><a class="nav-link"
+				href="all_new_book.jsp"><i class="fa-solid fa-book"></i> New
+					Book</a></li>
+
 			<li class="nav-item active"><a class="nav-link disabled"
-				href="all_old_book.jsp"><i class="fa-solid fa-book"></i> Old Book</a></li>
+				href="all_old_book.jsp"><i class="fa-solid fa-book"></i> Old
+					Book</a></li>
 		</ul>
 		<form class="form-inline my-2 mlmy-lg-0">
 
-			<button class="btn btn-light my-2 my-sm-0 mr-1" type="submit"> <i class="fa-solid fa-gear" ></i> Setting</button>
-			<button class="btn btn-light my-2 my-sm-0 ml-1" type="submit"><i class="fa-solid fa-phone"></i> Contact
-				Us</button>
+			<button class="btn btn-light my-2 my-sm-0 mr-1" type="submit">
+				<i class="fa-solid fa-gear"></i> Setting
+			</button>
+			<button class="btn btn-light my-2 my-sm-0 ml-1" type="submit">
+				<i class="fa-solid fa-phone"></i> Contact Us
+			</button>
 		</form>
 	</div>
 </nav>

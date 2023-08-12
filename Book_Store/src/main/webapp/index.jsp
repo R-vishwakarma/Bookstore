@@ -1,9 +1,12 @@
 
+<%@page import="com.entity.User"%>
 <%@page import="com.entity.BookDtls"%>
 <%@page import="java.util.List"%>
 <%@page import="com.DOA.BookDAOImpl"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="com.DB.DB_Connect"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -24,9 +27,16 @@
 .crd-ho:hover {
 	background-color: #ddeff0;
 }
+
+
 </style>
 </head>
 <body>
+
+	<%
+	User u = (User) session.getAttribute("userobj");
+	%>
+
 	<%@include file="all-Component/navbar.jsp"%>
 	<div class="container-fluid back-img">
 		<h2 class="text-center text-light">
@@ -58,7 +68,8 @@
 							Categories :
 							<%=b.getBookCategory()%></h6>
 						<div class="row-ml-5">
-							<a href="view_book.jsp?bid=<%=b.getBookId() %>" class="btn btn-info btn-sm ml-1">View</a> <a href=""
+							<a href="view_book.jsp?bid=<%=b.getBookId()%>"
+								class="btn btn-info btn-sm ml-1">View</a> <a href=""
 								class="btn btn-success btn-sm ml-1"><i
 								class="fa-solid fa-rupee-sign"></i>.<%=b.getPrice()%></a>
 						</div>
@@ -71,7 +82,8 @@
 			%>
 		</div>
 		<div class="text-center ml-1 p-5">
-			<a href="all_recent_book.jsp" class="btn btn-primary btn-sm text-white">View All</a>
+			<a href="all_recent_book.jsp"
+				class="btn btn-primary btn-sm text-white">View All</a>
 		</div>
 	</div>
 
@@ -95,16 +107,33 @@
 						<img alt="" src="books/<%=b.getPhotoName()%>"
 							style="width: 130px; height: 175px;" class="img-thumblin">
 						<h6><%=b.getBookName()%></h6>
-						<h6>
-							Categories :
-							<%=b.getBookCategory()%></h6>
+						<h6>Categories :<%=b.getBookCategory()%></h6>
 						<div class="row-ml-5">
-							<a href="" class="btn btn-secondary btn-sm ml-3"><i
+
+							<%
+							if (u == null) {
+							%>
+
+							<a href="login.jsp" class="btn btn-secondary btn-sm ml-3"><i
 								class="fa-solid fa-cart-shopping"></i>Add Cart</a>
-								 <a href="view_book.jsp?bid=<%=b.getBookId() %>"
+
+							<%
+							} else {
+							%>
+
+							<a href="cart?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>"
+								class="btn btn-secondary btn-sm ml-3"><i
+								class="fa-solid fa-cart-shopping"></i>Add Cart</a>
+
+							<%
+							}
+							%>
+
+
+							<a href="view_book.jsp?bid=<%=b.getBookId()%>"
 								class="btn btn-info btn-sm ml-1">View</a> <a href=""
 								class="btn btn-success btn-sm ml-1"><i
-								class="fa-solid fa-rupee-sign"></i>.<%=b.getPrice()%></a>
+								class="fa-solid fa-rupee-sign"></i><%=b.getPrice()%></a>
 						</div>
 					</div>
 				</div>
@@ -114,7 +143,8 @@
 			%>
 		</div>
 		<div class="text-center ml-1 p-5">
-			<a href="all_new_book.jsp" class="btn btn-primary btn-sm text-white">View All</a>
+			<a href="all_new_book.jsp" class="btn btn-primary btn-sm text-white">View
+				All</a>
 		</div>
 	</div>
 	<!-- Ending of New book -->
@@ -143,11 +173,29 @@
 							<%=b.getBookCategory()%></h6>
 						<div class="row-ml-5">
 
-							<a href="" class="btn btn-secondary btn-sm ml-3"><i
-								class="fa-solid fa-cart-shopping"></i>Add Cart</a> 
-								<a href="view_book.jsp?bid=<%=b.getBookId() %>"
-								class="btn btn-info btn-sm ml-1">View</a> 
-								<a href=""
+
+							<%
+							if (u == null) {
+							%>
+
+							<a href="login.jsp" class="btn btn-secondary btn-sm ml-3"><i
+								class="fa-solid fa-cart-shopping"></i>Add Cart</a>
+
+							<%
+							} else {
+							%>
+
+							<a href="cart?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>"
+								class="btn btn-secondary btn-sm ml-3"><i
+								class="fa-solid fa-cart-shopping"></i>Add Cart</a>
+
+							<%
+							}
+							%>
+							
+
+							<a href="view_book.jsp?bid=<%=b.getBookId()%>"
+								class="btn btn-info btn-sm ml-1">View</a> <a href=""
 								class="btn btn-success btn-sm ml-1"><i
 								class="fa-solid fa-rupee-sign"></i>.<%=b.getPrice()%></a>
 						</div>
@@ -159,7 +207,8 @@
 			%>
 		</div>
 		<div class="text-center ml-1 p-5">
-			<a href="all_old_book.jsp" class="btn btn-primary btn-sm text-white">View All</a>
+			<a href="all_old_book.jsp" class="btn btn-primary btn-sm text-white">View
+				All</a>
 		</div>
 	</div>
 

@@ -2,6 +2,8 @@
 <%@page import="com.entity.BookDtls"%>
 <%@page import="com.DB.DB_Connect"%>
 <%@page import="com.DOA.BookDAOImpl"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,13 +13,16 @@
 <title>All New Books</title>
 <%@include file="all-Component/all-css.jsp"%>
 <style type="text/css">
-
 .crd-ho:hover {
 	background-color: #ddeff0;
 }
+
 </style>
 </head>
 <body>
+
+	
+
 	<%@include file="all-Component/navbar.jsp"%>
 	<div class="container-fluid">
 		<div class="row">
