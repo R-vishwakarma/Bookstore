@@ -68,6 +68,30 @@
 							Categories :
 							<%=b.getBookCategory()%></h6>
 						<div class="row-ml-5">
+						
+						
+						
+							<%
+							if (u == null) {
+							%>
+
+							<a href="login.jsp" class="btn btn-secondary btn-sm ml-3"><i
+								class="fa-solid fa-cart-shopping"></i>Add Cart</a>
+
+							<%
+							} else {
+							%>
+
+							<a href="cart?bid=<%=b.getBookId()%>&&uid=<%=u.getId()%>"
+								class="btn btn-secondary btn-sm ml-3"><i
+								class="fa-solid fa-cart-shopping"></i>Add Cart</a>
+
+							<%
+							}
+							%>
+							
+						
+						
 							<a href="view_book.jsp?bid=<%=b.getBookId()%>"
 								class="btn btn-info btn-sm ml-1">View</a> <a href=""
 								class="btn btn-success btn-sm ml-1"><i

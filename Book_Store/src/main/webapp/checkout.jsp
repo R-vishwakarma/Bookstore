@@ -25,12 +25,12 @@
 
 	<c:if test="${not empty succMsg }">
 		<div class="alert alert-primary" role="alert">${succMsg}</div>
-	<c:remove var="succMsg" scope="session" />
-		
+		<c:remove var="succMsg" scope="session" />
+
 	</c:if>
 
 	<c:if test="${not empty failedMsg }">
-		<div class="alert alert-danger" role="alert">${failedMsg }</div>
+		<div class="alert alert-primary" role="alert">${failedMsg }</div>
 
 		<c:remove var="failedMsg" scope="session" />
 
@@ -41,9 +41,11 @@
 
 	<div class="container-fluid">
 		<div class="row ml-4 mr-4">
-			<div class="col-md-6 text-center border bg-white p-5 mt-4">
+			<div class="col-md-6 text-center border bg-white p-3 mt-4">
 
-				<h3 class="text-center  text-primary">Your Selected Books</h3>
+				<h3 class="text-center  text-primary">
+					<i class="fa-solid fa-bag-shopping"></i> Your Selected Books
+				</h3>
 				<div class="card">
 					<div class="card-body">
 
@@ -69,7 +71,8 @@
 								<tr>
 									<th scope="row"><%=c.getBookName()%></th>
 									<td><%=c.getPrice()%></td>
-									<td><a href="remove_book?bid=<%=c.getBid()%>&&uid=<%=c.getUserId() %>"
+									<td><a
+										href="remove_book?bid=<%=c.getBid()%>&&uid=<%=c.getUserId()%>"
 										class="btn btn-danger"><i class="fa-solid fa-xmark"></i>
 											Remove </a></td>
 								</tr>
@@ -95,7 +98,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6 mt-4">
+			<div class="col-md-6 mt-4 mb-5">
 				<div class="card">
 					<div class="card-body">
 
@@ -108,7 +111,8 @@
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Email</label> <input type="email"
-										class="form-control" id="inputPassword4" value="<%=u.getEmail()%>">
+										class="form-control" id="inputPassword4"
+										value="<%=u.getEmail()%>">
 								</div>
 							</div>
 							<div class="form-row">
@@ -118,27 +122,32 @@
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Address</label> <input type="text"
-										class="form-control" id="inputPassword4" value="<%=u.getAddress()%>">
+										class="form-control" id="inputPassword4"
+										value="<%=u.getAddress()%>">
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Landmark</label> <input type="text"
-										class="form-control" id="inputEmail4" value="<%=u.getLandmark()%>">
+										class="form-control" id="inputEmail4"
+										value="<%=u.getLandmark()%>">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">City</label> <input type="text"
-										class="form-control" id="inputPassword4" value="<%=u.getCity()%>">
+										class="form-control" id="inputPassword4"
+										value="<%=u.getCity()%>">
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">State</label> <input type="text"
-										class="form-control" id="inputEmail4" value="<%=u.getState()%>">
+										class="form-control" id="inputEmail4"
+										value="<%=u.getState()%>">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Zip Code</label> <input
-										type="number" class="form-control" id="inputPassword4" value="<%=u.getPincode()%>">
+										type="number" class="form-control" id="inputPassword4"
+										value="<%=u.getPincode()%>">
 								</div>
 							</div>
 
@@ -161,6 +170,6 @@
 		</div>
 	</div>
 
-
+	<%@include file="all-Component/footer.jsp"%>
 </body>
 </html>
