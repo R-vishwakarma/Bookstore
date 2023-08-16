@@ -40,7 +40,7 @@
 			</div>
 
 			<div class="col-md-6 text-center border bg-white p-5 mt-4">
-				<h2 class="mt-6"><%=b.getBookName()%></h2>
+				<h2 class="mt-6"><i class="fa-solid fa-book-open"></i> <%=b.getBookName()%></h2>
 				<div class="row mt-5">
 					<div class="col-md-4 text-center text-success p-2 ">
 
@@ -59,7 +59,7 @@
 				</div>
 				<div class="text-center mt-5">
 
-                 
+
 
 					<%
 					if (u == null) {

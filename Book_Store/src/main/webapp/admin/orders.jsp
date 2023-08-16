@@ -1,3 +1,8 @@
+<%@page import="com.entity.Book_Order"%>
+<%@page import="java.util.List"%>
+<%@page import="com.DB.DB_Connect"%>
+<%@page import="com.DOA.BookOrderDAOImpl"%>
+<%@page import="com.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -33,42 +38,32 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<th scope="row">1</th>
-				<td>Mark</td>
-				<td>Otto</td>
-				<td>@mdo</td>
-				<td>@mdo</td>
-				<td>Mark</td>
-				<td>Otto</td>
-				<td>@mdo</td>
+		
+		
+				<%
+				User u = (User) session.getAttribute("userobj");
+				BookOrderDAOImpl dao = new BookOrderDAOImpl(DB_Connect.getConn());
+				List<Book_Order> blist = dao.getAllOrder();
+				for (Book_Order b : blist) {
+				%>
+		<tr>
+					<th scope="row"><%=b.getOrderId()%></th>
+					<td><%=b.getUserName() %></td>
+					<td><%=b.getEmail() %></td>
+					<td><%=b.getFulladd() %></td>
+					<td><%=b.getPhno() %></td>
+					<td><%=b.getBookName() %></td>
+					<td><%=b.getPrice() %></td>
+					<td><%=b.getPaymentType() %></td>
 
+				</tr>
 
-
-			</tr>
-			<tr>
-				<th scope="row">2</th>
-				<td>Jacob</td>
-				<td>Mark</td>
-				<td>Thornton</td>
-				<td>@fat</td>
-				<td>Mark</td>
-				<td>Otto</td>
-				<td>@mdo</td>
-
-			</tr>
-			<tr>
-				<th scope="row">3</th>
-				<td>the Bird</td>
-				<td>Mark</td>
-				<td>Otto</td>
-				<td>@twitter</td>
-				<td>Mark</td>
-				<td>Otto</td>
-				<td>@mdo</td>
-
-
-			</tr>
+				<%
+				}
+				%>
+		
+			
+			
 		</tbody>
 	</table>
 	<%@include file="footer.jsp"%>

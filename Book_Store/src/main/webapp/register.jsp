@@ -12,7 +12,7 @@
 <body style="background-color: #e8eded;">
 	<%@include file="all-Component/navbar.jsp"%>
 
-	<div class="container p-2">
+	<div class="container p-2 pb-5">
 		<div class="row">
 			<div class="mx-auto col-10 col-md-8 col-lg-6">
 				<div class="card">

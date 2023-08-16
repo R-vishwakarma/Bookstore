@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.text.StyledEditorKit.BoldAction;
 
 import com.DB.DB_Connect;
 import com.DOA.UserDAOImpl;
@@ -38,20 +39,35 @@ public class RegisterServelet extends HttpServlet {
 			if (check != null) {
 
 				UserDAOImpl dao = new UserDAOImpl(DB_Connect.getConn());
-				boolean f = dao.userRegister(us);
-				if (f) {
-					// System.out.println("User Register Succesfull..");
+				
+			boolean f2=	dao.checkUser(email);
+				if(f2) {
+					
+					boolean f = dao.userRegister(us);
+					if (f) {
+						// System.out.println("User Register Succesfull..");
 
-					session.setAttribute("succMsg", "Successfully Registered...");
+						session.setAttribute("succMsg", "Successfully Registered...");
+						resp.sendRedirect("register.jsp");
+
+					} else {
+						// System.out.println("Something Went Wrong..");
+
+						session.setAttribute("failedMsg", "Something Went Wrong!..");
+						resp.sendRedirect("register.jsp");
+
+					}
+					
+					
+				}else {
+					session.setAttribute("failedMsg", "User Already Exist..");
 					resp.sendRedirect("register.jsp");
-
-				} else {
-					// System.out.println("Something Went Wrong..");
-
-					session.setAttribute("failedMsg", "Something Went Wrong!..");
-					resp.sendRedirect("register.jsp");
-
 				}
+				
+				
+				
+				
+				
 			} else {
 				// System.out.println("Please check the Agreement..");
 				

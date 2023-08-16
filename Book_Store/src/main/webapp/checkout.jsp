@@ -103,58 +103,61 @@
 					<div class="card-body">
 
 						<h3 class="text-center  text-primary">Your Details</h3>
-						<form>
+						<form action="order" method="post">
+						
+						<input type="hidden" value="${userobj.id}" name="id">
+						
 							<div class="form-row">
 								<div class="form-group col-md-6">
-									<label for="inputEmail4">Name</label> <input type="text"
-										class="form-control" id="inputEmail4" value="<%=u.getName()%>">
+									<label for="inputEmail4">Name</label> <input type="text" name="username"
+										class="form-control" id="inputEmail4" value="<%=u.getName()%>" required>
 								</div>
 								<div class="form-group col-md-6">
-									<label for="inputPassword4">Email</label> <input type="email"
+									<label for="inputPassword4">Email</label> <input type="email" name="email"
 										class="form-control" id="inputPassword4"
-										value="<%=u.getEmail()%>">
+										value="<%=u.getEmail()%>" required>
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
-									<label for="inputEmail4">Mobile No</label> <input type="number"
-										class="form-control" id="inputEmail4" value="<%=u.getPhno()%>">
+									<label for="inputEmail4">Mobile No</label> <input type="number" name="phno"
+										class="form-control" id="inputEmail4" value="<%=u.getPhno()%>" required>
 								</div>
 								<div class="form-group col-md-6">
-									<label for="inputPassword4">Address</label> <input type="text"
+									<label for="inputPassword4">Address</label> <input type="text" name="address"
 										class="form-control" id="inputPassword4"
-										value="<%=u.getAddress()%>">
+										value="<%=u.getAddress()%>" required>
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
-									<label for="inputEmail4">Landmark</label> <input type="text"
+									<label for="inputEmail4">Landmark</label> <input type="text" name="landmark"
 										class="form-control" id="inputEmail4"
-										value="<%=u.getLandmark()%>">
+										value="<%=u.getLandmark()%>" required>
 								</div>
 								<div class="form-group col-md-6">
-									<label for="inputPassword4">City</label> <input type="text"
+									<label for="inputPassword4">City</label> <input type="text" name="city"
 										class="form-control" id="inputPassword4"
-										value="<%=u.getCity()%>">
+										value="<%=u.getCity()%>" required>
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
-									<label for="inputEmail4">State</label> <input type="text"
+									<label for="inputEmail4">State</label> <input type="text" name="state"
 										class="form-control" id="inputEmail4"
-										value="<%=u.getState()%>">
+										value="<%=u.getState()%>" required>
 								</div>
 								<div class="form-group col-md-6">
-									<label for="inputPassword4">Zip Code</label> <input
+									<label for="inputPassword4">Pin Code</label> <input name="pincode"
 										type="number" class="form-control" id="inputPassword4"
-										value="<%=u.getPincode()%>">
+										value="<%=u.getPincode()%>" required>
 								</div>
 							</div>
 
 							<div class="form-group ">
-								<label>Payment Mode </label> <select class="form-control">
-									<option>--Select--</option>
-									<option>Cash on delivery</option>
+								<label>Payment Mode </label> <select class="form-control" name="payment">
+									<option value="noselect">--Select--</option>
+									<option value="COD">Cash on delivery</option>
 								</select>
 							</div>
 							<div class="text-center">

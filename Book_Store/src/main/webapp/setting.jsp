@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page isELIgnored="false"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,15 +12,14 @@
 <body>
 <%@include file="all-Component/navbar.jsp"%>
 
-
-
 <h4 class="text-center pt-2">
-		<b><i class="fa-solid fa-user"></i> Hello Admin</b>
+
+		<b><i class="fa-solid fa-user"></i> Hello ${userobj.name }</b>
 	</h4>
-	<div class="container mt-2">
+	<div class="container-fluid mt-2">
 		<div class="row p-5">
 
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<a href="Edit_profile.jsp">
 					<div class="card">
 						<div class="card-body text-center">
@@ -30,23 +31,13 @@
 				</a>
 			</div>
 
-			<div class="col-md-3">
-				<a href="User_address.jsp">
-					<div class="card">
-						<div class="card-body text-center">
-							<i class="fa-solid fa-location-dot fa-5x text-success"></i><br><br>
-							<h4>Your Address</h4>
-						
-						</div>
-					</div>
-				</a>
-			</div>
+			
 
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<a href="user_order.jsp">
 					<div class="card">
 						<div class="card-body text-center">
-							<i class="fa-solid fa-box text-danger fa-5x"></i></i><br><br>
+							<i class="fa-solid fa-box text-warning fa-5x"></i></i><br><br>
 							<h4>My Order</h4>
 							
 						</div>
@@ -54,7 +45,7 @@
 				</a>
 			</div>
 
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<a href="Helpline.jsp">
 					<div class="card">
 						<div class="card-body text-center">

@@ -32,8 +32,9 @@
 
 
 				<%
+				String ch=request.getParameter("ch");
 				BookDAOImpl dao = new BookDAOImpl(DB_Connect.getConn());
-				List<BookDtls> list = dao.getAllRecentbook();
+				List<BookDtls> list = dao.getBookBySearch(ch);
 				for (BookDtls b : list) {
 				%>
 

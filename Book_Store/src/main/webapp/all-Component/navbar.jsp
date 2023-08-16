@@ -9,8 +9,8 @@
 			</h3>
 		</div>
 		<div class="col-md-6">
-			<form class="form-inline my-2 my-lg-0">
-				<input class="form-control mr-sm-2" type="search"
+			<form class="form-inline my-2 my-lg-0" action="search.jsp" method="post">
+				<input class="form-control mr-sm-2" type="search" name="ch"
 					placeholder="Search" aria-label="Search">
 				<button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
 			</form>
@@ -76,9 +76,9 @@
 			<a href="setting.jsp" class="btn btn-light my-2 my-sm-0 mr-1" type="submit">
 				<i class="fa-solid fa-gear"></i> Setting
 			</a>
-			<button class="btn btn-light my-2 my-sm-0 ml-1" type="submit">
+			<a href="Helpline.jsp"  class="btn btn-light my-2 my-sm-0 ml-1" type="submit">
 				<i class="fa-solid fa-phone"></i> Contact Us
-			</button>
+			</a>
 		</form>
 	</div>
 </nav>
