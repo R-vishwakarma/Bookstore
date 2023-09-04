@@ -16,16 +16,10 @@
 <title>Book Index Page</title>
 <%@include file="all-Component/all-css.jsp"%>
 <style type="text/css">
-.back-img {
-	background: url("img/b1.jpg");
-	height: 50vh;
-	width: 100%;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
+
 
 .crd-ho:hover {
-	background-color: #ddeff0;
+	background-color: #f7f6da;
 }
 
 
@@ -38,17 +32,41 @@
 	%>
 
 	<%@include file="all-Component/navbar.jsp"%>
-	<div class="container-fluid back-img">
-		<h2 class="text-center text-light">
-			<i class="fa-solid fa-book-open"></i> Welcome To Book Store
-		</h2>
-	</div>
+ 
+
+ <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="img/x3.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/x1.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="img/x2.jpg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
 
 
 
 	<!-- Starting of recent book -->
 
-	<div class="container-fluid" style="background-color: #e8eded;">
+	<div class="container-fluid" style="background-color: #f7f6da;">
 		<h3 class="text-center">Recent book</h3>
 		<div class="row">
 
@@ -116,7 +134,7 @@
 
 
 	<!-- Starting of New book -->
-	<div class="container-fluid" style="background-color: #e8eded;">
+	<div class="container-fluid" style="background-color: #f7f6da;">
 		<h3 class="text-center">New book</h3>
 		<div class="row">
 
@@ -177,7 +195,7 @@
 
 	<!-- Starting of Old book -->
 
-	<div class="container-fluid" style="background-color: #e8eded;">
+	<div class="container-fluid" style="background-color: #f7f6da;">
 		<h3 class="text-center">Old book</h3>
 		<div class="row">
 

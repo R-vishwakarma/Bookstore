@@ -158,6 +158,7 @@
 								<label>Payment Mode </label> <select class="form-control" name="payment">
 									<option value="noselect">--Select--</option>
 									<option value="COD">Cash on delivery</option>
+									<option value="online">Card Payment</option>
 								</select>
 							</div>
 							<div class="text-center">

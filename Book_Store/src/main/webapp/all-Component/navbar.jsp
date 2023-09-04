@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="col-md-3">
 			<h3>
-				<i class="fa-solid fa-book"></i> Book Store
+				<img src="img/logo.png" style="height:40px; width:50px;"> Book Store
 			</h3>
 		</div>
 		<div class="col-md-6">

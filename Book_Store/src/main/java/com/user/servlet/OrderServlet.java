@@ -73,7 +73,11 @@ public class OrderServlet extends HttpServlet {
 					
 					session.setAttribute("failedMsg", "Please Choose Payment Method ");
 					resp.sendRedirect("checkout.jsp");
-				} else {
+				}
+				else if("online".equals(paymentType)) {
+					resp.sendRedirect("onlinePayment.jsp");
+				}
+				else {
 
 					Boolean f = dao2.saveOrder(orderList);
 					if(f) {
