@@ -66,7 +66,9 @@
 			
 		</tbody>
 	</table>
-	<%@include file="footer.jsp"%>
+	<div class="p-5">
+	<%@include file="footer.jsp"%></div>
+
 
 </body>
 </html>

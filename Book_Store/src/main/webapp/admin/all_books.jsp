@@ -88,6 +88,8 @@
 		</tbody>
 	</table>
 
+<div class="p-5">
+	<%@include file="footer.jsp"%></div>
 
 </body>
 </html>

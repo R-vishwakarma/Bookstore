@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>User Order</title>
 <%@include file="all-Component/all-css.jsp"%>
 </head>
 <body>
@@ -74,6 +74,7 @@
 
 
 
-	<%@include file="all-Component/footer.jsp"%>
+	<div class="p-5">
+	<%@include file="all-Component/footer.jsp"%></div>
 </body>
 </html>

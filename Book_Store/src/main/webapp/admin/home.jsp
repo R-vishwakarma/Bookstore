@@ -8,14 +8,23 @@
 <meta charset="UTF-8">
 <title>Admin: Home</title>
 <%@include file="all-css.jsp"%>
+<style type="text/css">
+.crd-ho:hover {
+	background: linear-gradient(to top, #87CEEB, #fff);
+	color: black;
+}
 
+.crd-ho {
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+</style>
 </head>
 <body>
 	<%@include file="navbar.jsp"%>
 
 	<c:if test="${empty userobj }">
 		<c:redirect url="../login.jsp">
-		
+
 		</c:redirect>
 	</c:if>
 
@@ -26,8 +35,9 @@
 		<div class="row p-5">
 
 			<div class="col-md-3">
-				<a href="add_books.jsp">
-					<div class="card">
+				<a href="add_books.jsp" class="text-dark">
+					<div class="card border-secondary mb-3 crd-ho"
+						style="max-width: 18rem;">
 						<div class="card-body text-center">
 							<i class="fa-regular fa-square-plus fa-5x text-success"></i><br>
 							<h4>Add Books</h4>
@@ -38,8 +48,9 @@
 			</div>
 
 			<div class="col-md-3">
-				<a href="all_books.jsp">
-					<div class="card">
+				<a href="all_books.jsp " class="text-dark">
+					<div class="card border-secondary mb-3 crd-ho"
+						style="max-width: 18rem;">
 						<div class="card-body text-center">
 							<i class="fa-solid fa-book-open fa-5x text-warning"></i><br>
 							<h4>All Books</h4>
@@ -50,8 +61,9 @@
 			</div>
 
 			<div class="col-md-3">
-				<a href="orders.jsp">
-					<div class="card">
+				<a href="orders.jsp" class="text-dark">
+					<div class="card border-secondary mb-3 crd-ho"
+						style="max-width: 18rem;">
 						<div class="card-body text-center">
 							<i class="fa-solid fa-people-carry-box fa-5x text-danger"></i><br>
 							<h4>Order</h4>
@@ -63,7 +75,8 @@
 
 			<div class="col-md-3">
 				<a data-toggle="modal" data-target="#exampleModal">
-					<div class="card">
+					<div class="card border-secondary mb-3 crd-ho"
+						style="max-width: 18rem;">
 						<div class="card-body text-center">
 							<i class="fa-solid fa-right-from-bracket fa-5x text-secondary"></i><br>
 							<h4>Logout</h4>
@@ -107,6 +120,8 @@
 
 	<!-- End Log Out Model -->
 
-	<%@include file="footer.jsp"%>
+<div class="p-5">
+	<%@include file="footer.jsp"%></div>
+
 </body>
 </html>

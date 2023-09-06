@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>All Recent Books</title>
+<title>search</title>
 <%@include file="all-Component/all-css.jsp"%>
 
 <style type="text/css">

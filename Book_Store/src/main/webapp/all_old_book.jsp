@@ -15,7 +15,12 @@
 <%@include file="all-Component/all-css.jsp"%>
 <style type="text/css">
 .crd-ho:hover {
-	background-color: #ddeff0;
+	  background: linear-gradient(to top, #87CEEB, #fff); 
+  color: #fff;
+	
+}
+.crd-ho{
+box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
 </style>
 </head>
@@ -27,17 +32,20 @@
 	%>
 
 	<%@include file="all-Component/navbar.jsp"%>
+	<h3 class="text-center text-dark"><i>All Old Books</i></h3>
 	<div class="container-fluid">
-		<div class="row">
+		<div class="row ml-4">
 
 			<%
 			BookDAOImpl dao3 = new BookDAOImpl(DB_Connect.getConn());
 			List<BookDtls> list3 = dao3.getAllOldbook();
 			for (BookDtls b : list3) {
 			%>
-			<div class="col-md-3">
-				<div class="card crd-ho">
-					<div class="card-body text-center">
+			<div class="col-md-3 mt-2">
+				<div class="card border-secondary mb-3 crd-ho"
+					style="max-width: 18rem;">
+
+					<div class="card-body text-dark text-center">
 						<img alt="" src="books/<%=b.getPhotoName()%>"
 							style="width: 80px; height: 120px;" class="img-thumblin">
 						<h6><%=b.getBookName()%></h6>
@@ -87,6 +95,8 @@
 
 		</div>
 	</div>
-
+<div class="p-3">
+		<%@include file="all-Component/footer.jsp"%>
+	</div>
 </body>
 </html>

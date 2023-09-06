@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>online payment</title>
 <style>
 .paint-card {
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -99,6 +99,7 @@
 			</div>
 		</div>
 	</div>
-	<%@include file="all-Component/footer.jsp"%>
+	<div class="p-5">
+	<%@include file="all-Component/footer.jsp"%></div>
 </body>
 </html>

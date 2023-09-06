@@ -95,6 +95,7 @@
 			</div>
 		</div>
 	</div>
-
+<div class="p-5">
+	<%@include file="all-Component/footer.jsp"%></div>
 </body>
 </html>

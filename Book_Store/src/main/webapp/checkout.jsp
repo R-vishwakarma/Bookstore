@@ -158,7 +158,7 @@
 								<label>Payment Mode </label> <select class="form-control" name="payment">
 									<option value="noselect">--Select--</option>
 									<option value="COD">Cash on delivery</option>
-									<option value="online">Card Payment</option>
+									<option value="CARD PAYMENT">Card Payment</option>
 								</select>
 							</div>
 							<div class="text-center">
@@ -174,6 +174,7 @@
 		</div>
 	</div>
 
-	<%@include file="all-Component/footer.jsp"%>
+	<div class="p-5">
+	<%@include file="all-Component/footer.jsp"%></div>
 </body>
 </html>

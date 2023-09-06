@@ -8,9 +8,9 @@
 				<img src="img/logo.png" style="height:40px; width:50px;"> Book Store
 			</h3>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-6 ">
 			<form class="form-inline my-2 my-lg-0" action="search.jsp" method="post">
-				<input class="form-control mr-sm-2" type="search" name="ch"
+				<input class="form-control mr-sm-2 " type="search" name="ch"
 					placeholder="Search" aria-label="Search">
 				<button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
 			</form>
@@ -21,7 +21,7 @@
 			<a href="checkout.jsp"><i
 				class="fa-solid fa-cart-shopping fa-2x pt-1 pr-2 text-primary"></i>
 			</a>
-			<div class="row-md-2">
+			<div class="row-md-3">
 
 				<a href="login.jsp" class="btn btn-success"><i
 					class="fa-solid fa-user"></i> ${userobj.name }</a> <a href="logout"
@@ -35,7 +35,7 @@
 			<div class="row-md-2">
 				<a href="login.jsp" class="btn btn-success"><i
 					class="fa-solid fa-user-plus"></i>Login</a> <a href="register.jsp"
-					class="btn btn-secondary"><i class="fa-regular fa-id-card"></i>
+					class="btn btn-dark"><i class="fa-regular fa-id-card"></i>
 					Register</a>
 			</div>
 
