@@ -17,7 +17,15 @@
 <%@include file="all-Component/all-css.jsp"%>
 <style type="text/css">
 .crd-ho:hover {
-	   background: linear-gradient(to top, #87CEEB, #fff); /* Light blue to white gradient */
+	  background: linear-gradient(to top, #87CEEB, #fff); /* Light blue to white gradient */
+  color: #fff;
+	
+}
+.productimg{
+transition:ease 0.8s;
+}
+.productimg:hover {
+	   transform:scale(1.2); /* Light blue to white gradient */
   color: #fff;
   
 }
@@ -104,7 +112,7 @@
 			<div class="col-md-3">
 				<div class="text-center ">
 					<p><a href="deal.jsp">
-						<img src="img/24.png" style="height:55px;width:50px" ></a>
+						<img src="img/24.png" style="height:55px;width:50px; opacity:0.78;" ></a>
 					</p>
 					<h4><i>Today's deal</i></h4>
 				</div>
@@ -130,9 +138,9 @@
 					style="max-width: 18rem;">
 
 					<div class="card-body text-dark text-center">
-						<img alt="" src="books/<%=b.getPhotoName()%>"
+						<img class="productimg" alt="" src="books/<%=b.getPhotoName()%>"
 							style="width: 130px; height: 175px;" class="img-thumblin">
-						<h6><%=b.getBookName()%></h6>
+						<h6 class="mt-4"><%=b.getBookName()%></h6>
 						<h6>
 							Categories :
 							<%=b.getBookCategory()%></h6>
@@ -201,9 +209,9 @@
 					style="max-width: 18rem;">
 
 					<div class="card-body text-dark text-center">
-						<img alt="" src="books/<%=b.getPhotoName()%>"
+						<img alt="" class="productimg" src="books/<%=b.getPhotoName()%>"
 							style="width: 130px; height: 175px;" class="img-thumblin">
-						<h6><%=b.getBookName()%></h6>
+						<h6 class="mt-4"><%=b.getBookName()%></h6>
 						<h6>
 							Categories :<%=b.getBookCategory()%></h6>
 						<div class="row-ml-5">
@@ -267,9 +275,9 @@
 					style="max-width: 18rem;">
 
 					<div class="card-body text-dark text-center">
-						<img alt="" src="books/<%=b.getPhotoName()%>"
+						<img alt="" class="productimg" src="books/<%=b.getPhotoName()%>"
 							style="width: 130px; height: 175px;" class="img-thumblin">
-						<h6><%=b.getBookName()%></h6>
+						<h6 class="mt-4"><%=b.getBookName()%></h6>
 						<h6>
 							Categories :
 							<%=b.getBookCategory()%></h6>

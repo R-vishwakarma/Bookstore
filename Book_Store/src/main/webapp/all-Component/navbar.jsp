@@ -26,7 +26,7 @@
 				<a href="login.jsp" class="btn btn-success"><i
 					class="fa-solid fa-user"></i> ${userobj.name }</a> <a href="logout"
 					class="btn btn-secondary"><i
-					class="fa-solid fa-right-from-bracket"></i> Louout</a>
+					class="fa-solid fa-right-from-bracket"></i> Logout</a>
 			</div>
 
 		</c:if>

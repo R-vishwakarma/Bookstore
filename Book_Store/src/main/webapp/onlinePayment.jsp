@@ -72,7 +72,7 @@
 							<div class="md-4 mt-4"></div>
 							<label for="cardNumber">Card Number:
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label> <input type="text"
-								id="cardNumber" name="cardNumber" placeholder="**** **** **** ****" required><br>
+								id="cardNumber" name="cardNumber" pattern="[4-8]{4}[]" placeholder="**** **** **** ****" required><br>
 							<div class="md-4 mt-3">
 								<label for="cardName">Cardholder Name:&nbsp;</label> <input
 									type="text" id="cardName" name="cardName" required>

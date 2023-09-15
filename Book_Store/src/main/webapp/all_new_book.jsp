@@ -19,6 +19,14 @@
   color: #fff;
 	
 }
+.productimg{
+transition:ease 0.8s;
+}
+.productimg:hover {
+	   transform:scale(1.2); /* Light blue to white gradient */
+  color: #fff;
+  
+}
 .crd-ho{
 box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
@@ -48,9 +56,9 @@ box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 					style="max-width: 18rem;">
 
 					<div class="card-body text-dark text-center">
-						<img alt="" src="books/<%=b.getPhotoName()%>"
+						<img alt="" class="productimg" src="books/<%=b.getPhotoName()%>"
 							style="width: 80px; height: 120px;" class="img-thumblin">
-						<h6><%=b.getBookName()%></h6>
+						<h6 class="mt-4"><%=b.getBookName()%></h6>
 						<h6>
 							Categories :
 							<%=b.getBookCategory()%></h6>

@@ -42,7 +42,7 @@
 				<div class="card">
 					<div class="card-body">
 
-						<form action="../../add_books" method="post"
+						<form action="${pageContext.request.contextPath}/add_books " method="post"
 							enctype="multipart/form-data">
 
 							<div class="form-group">
