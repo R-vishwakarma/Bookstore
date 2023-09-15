@@ -10,6 +10,11 @@
 <%@include file="all-Component/all-css.jsp"%>
 </head>
 <body>
+<c:if test="${empty userobj }">
+		<c:redirect url="login.jsp">
+
+		</c:redirect>
+	</c:if>
 	<%@include file="all-Component/navbar.jsp"%>
 
 

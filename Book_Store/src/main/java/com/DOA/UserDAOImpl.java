@@ -3,6 +3,8 @@ package com.DOA;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.entity.User;
 import com.mysql.cj.exceptions.RSAException;
@@ -139,5 +141,55 @@ public boolean checkUser(String em) {
 	}
 	return f;
 }
+@Override
+public List<User> getalluser() {
+	List<User> list=new ArrayList<User>();
+	User u=null;
+	try {
+		String sql="select * from user";
+		PreparedStatement ps=conn.prepareStatement(sql);
+		
+		ResultSet rs=ps.executeQuery();
+		while(rs.next()) {
+			u=new User();
+			u.setId(rs.getInt(1));
+			u.setName(rs.getString(2));
+			u.setEmail(rs.getString(3));
+			u.setPhno(rs.getString(4));
+			u.setPassword(rs.getString(5));
+			list.add(u);
+		}
+		
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	
+	
+	
+	return list;
+}
+
+@Override
+public boolean deleteUser(int id) {
+	
+	boolean f=false;
+	try {
+		String sql="delete from user where id=?";
+		PreparedStatement ps =conn.prepareStatement(sql);
+		ps.setInt(1, id);
+		int i=ps.executeUpdate();
+		if(i==1) {
+			f=true;
+		}
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	
+	return f;
+	
+}
 
 }
+

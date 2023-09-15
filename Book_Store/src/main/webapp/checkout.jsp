@@ -15,6 +15,11 @@
 <%@include file="all-Component/all-css.jsp"%>
 </head>
 <body>
+	<c:if test="${empty userobj }">
+		<c:redirect url="login.jsp">
+
+		</c:redirect>
+	</c:if>
 	<%@include file="all-Component/navbar.jsp"%>
 
 	<c:if test="${empty userobj}">
@@ -126,31 +131,31 @@
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Address</label> <input type="text" name="address"
 										class="form-control" id="inputPassword4"
-										value="<%=u.getAddress()%>" required>
+										value="" required>
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">Landmark</label> <input type="text" name="landmark"
 										class="form-control" id="inputEmail4"
-										value="<%=u.getLandmark()%>" required>
+										value="" required>
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">City</label> <input type="text" name="city"
 										class="form-control" id="inputPassword4"
-										value="<%=u.getCity()%>" required>
+										value="" required>
 								</div>
 							</div>
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="inputEmail4">State</label> <input type="text" name="state"
 										class="form-control" id="inputEmail4"
-										value="<%=u.getState()%>" required>
+										value="" required>
 								</div>
 								<div class="form-group col-md-6">
 									<label for="inputPassword4">Pin Code</label> <input name="pincode"
 										type="number" class="form-control" id="inputPassword4"
-										value="<%=u.getPincode()%>" required>
+										value="" required>
 								</div>
 							</div>
 

@@ -13,6 +13,11 @@
 <%@include file="all-css.jsp"%>
 </head>
 <body style="background-color: #fcf7f7;">
+<c:if test="${empty userobj }">
+		<c:redirect url="login.jsp">
+
+		</c:redirect>
+	</c:if>
 	<%@include file="navbar.jsp"%>
 	<h4 class="text-center p-2">Edit Book</h4>
 

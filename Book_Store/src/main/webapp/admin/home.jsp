@@ -74,12 +74,12 @@
 			</div>
 
 			<div class="col-md-3">
-				<a data-toggle="modal" data-target="#exampleModal">
+				<a href="all_user.jsp"class="text-dark">
 					<div class="card border-secondary mb-3 crd-ho"
 						style="max-width: 18rem;">
 						<div class="card-body text-center">
-							<i class="fa-solid fa-right-from-bracket fa-5x text-secondary"></i><br>
-							<h4>Logout</h4>
+							<i class="fa-solid fa-user fa-5x text-secondary"></i><br>
+							<h4 class="text-dark">All User</h4>
 							---------
 						</div>
 					</div>

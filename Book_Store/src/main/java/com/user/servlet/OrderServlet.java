@@ -83,7 +83,7 @@ public class OrderServlet extends HttpServlet {
 							resp.sendRedirect("onlinePayment.jsp");
 						}
 					  else {
-						resp.sendRedirect("order_success.jsp");
+						req.getRequestDispatcher("/emailsending").forward(req, resp);
 					  }
 					}else {
 						session.setAttribute("failedMsg", "Something went wrong ");
