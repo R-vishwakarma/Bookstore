@@ -80,9 +80,9 @@ public class OrderServlet extends HttpServlet {
 					Boolean f = dao2.saveOrder(orderList);
 					if(f) {
 					  if("CARD PAYMENT".equals(paymentType)) {
-							resp.sendRedirect("onlinePayment.jsp");
+						  req.getRequestDispatcher("/emailsending").forward(req, resp);
 						}
-					  else {
+					  else if("COD".equals(paymentType)){
 						req.getRequestDispatcher("/emailsending").forward(req, resp);
 					  }
 					}else {

@@ -24,7 +24,7 @@ public class EmailServlet extends HttpServlet {
         // Recipient's email address
         HttpSession session = req.getSession();
        
-        String name = req.getParameter("name");
+        String name = req.getParameter("username");
         String recipientemail = req.getParameter("email"); // Get the email address from the form or another source
 
         // Check the payment mode (cash on delivery or card payment)
@@ -55,13 +55,11 @@ public class EmailServlet extends HttpServlet {
 
                 // Set the email subject and content based on the payment mode
                 if ("CARD PAYMENT".equals(paymentMode)) {
-                    // Handle card payment specific logic here
-                    // For example, include payment details in the email
                     message.setSubject("Card Payment Confirmation");
                     message.setText("Hello " + name + ", Your card payment has been processed. Thank you for shopping with us!");
-                } else {
+                } else if ("COD".equals(paymentMode)) {
                     // Handle cash on delivery specific logic here
-                    message.setSubject("Order Confirmation");
+                    message.setSubject("Cash on delivery Confirmation");
                     message.setText("Hello " + name + ", Your order has been confirmed. Thank you for shopping with us!");
                 }
 
@@ -74,9 +72,10 @@ public class EmailServlet extends HttpServlet {
                 // Redirect to the appropriate order confirmation page
                 if ("CARD PAYMENT".equals(paymentMode)) {
                     resp.sendRedirect("order_success.jsp");
-                } else {
+                } else if("COD".equals(paymentMode)){
                     resp.sendRedirect("order_success.jsp");
                 }
+               
             } catch (MessagingException e) {
                 // Log the error (consider using a logging framework instead of printing to the console)
                 e.printStackTrace();
