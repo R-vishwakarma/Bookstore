@@ -73,11 +73,10 @@
 		<form class="form-inline my-2 mlmy-lg-0">
 
 			
-			<a href="setting.jsp" class="btn btn-light my-2 my-sm-0 mr-1" type="submit">
-				<i class="fa-solid fa-gear"></i> Setting
+			<a href="setting.jsp" style="height:40px;"class="btn btn-light my-2 my-sm-0 mr-1" type="submit">
+				<i class="fa-solid fa-gear "></i>  Setting
 			</a>
-			<a href="Helpline.jsp"  class="btn btn-light my-2 my-sm-0 ml-1" type="submit">
-				<i class="fa-solid fa-phone"></i> Contact Us
+			<a href="chatbot.jsp"  class="btn btn-light my-2 my-sm-0 ml-1" type="submit"><img src="img/bot.png" height="25px" width="35px"> Chat
 			</a>
 		</form>
 	</div>

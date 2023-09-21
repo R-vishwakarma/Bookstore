@@ -14,4 +14,7 @@ public interface BookOrderDAO {
 	
 	public List<Book_Order> getAllOrder();
 	
+	public boolean deleteOrder(String order_id);
+
+	
 }
